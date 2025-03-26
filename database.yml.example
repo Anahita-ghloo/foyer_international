@@ -1,0 +1,14 @@
+development:
+  dialect: postgres
+  database: bookings
+  user: postgres
+  password: goApppstDM!?
+  host: 127.0.0.1
+  pool: 5
+  port: 5433
+
+test:
+  url: {{envOr "TEST_DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_test"}}
+
+production:
+  url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_production"}}
